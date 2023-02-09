@@ -1,8 +1,10 @@
 import API from 'services/API';
+import Cast from 'components/Cast/Cast';
 
 import { useState, useEffect } from 'react';
 
 import { useParams } from 'react-router-dom';
+import Review from 'components/Review/Review';
 
 const SingleMoviePage = () => {
   const [movieData, setMovieData] = useState(0);
@@ -10,7 +12,6 @@ const SingleMoviePage = () => {
   useEffect(() => {
     try {
       API.getSingleMovie(id).then(response => {
-        console.log('fetchSingleMovieResponse', response);
         const {
           title,
           overview,
@@ -57,6 +58,8 @@ const SingleMoviePage = () => {
         </div>
       </div>
       <p>Additional information</p>
+      <Cast />
+      <Review />
     </div>
   );
 };

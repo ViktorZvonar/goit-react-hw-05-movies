@@ -6,8 +6,8 @@ const MoviesList = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     try {
-      API.getTrendingMovies().then(data => {
-        setMovies(data.results);
+      API.getTrendingMovies().then(response => {
+        setMovies(response.results);
       });
     } catch (error) {
       console.log(error);
