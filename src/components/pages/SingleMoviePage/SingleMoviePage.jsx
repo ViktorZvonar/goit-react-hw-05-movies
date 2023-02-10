@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const SingleMoviePage = () => {
-  const [movieData, setMovieData] = useState(0);
+  const [movie, setMovie] = useState(0);
   const { id } = useParams();
   useEffect(() => {
     try {
@@ -24,7 +24,7 @@ const SingleMoviePage = () => {
           genres,
           release_date,
         } = response.data;
-        setMovieData({
+        setMovie({
           title,
           overview,
           poster_path,
@@ -39,9 +39,9 @@ const SingleMoviePage = () => {
   }, [id]);
 
   const { title, overview, poster_path, vote_average, genres, release_date } =
-    movieData;
+    movie;
 
-  if (!movieData) {
+  if (!movie) {
     return;
   }
 

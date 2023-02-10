@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Menu from './Menu/Menu';
 import HomePage from './pages/HomePage/HomePage';
-import MoviesPage from './pages/MoviesPage/MoviesPage';
+import MoviesSearchPage from './pages/MoviesSearchPage/MoviesSearchPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import SingleMoviePage from './pages/SingleMoviePage/SingleMoviePage';
 import Cast from './Cast/Cast';
@@ -23,7 +23,7 @@ export const App = () => {
       <Menu></Menu>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movies" element={<MoviesSearchPage />} />
         <Route path="/movies/:id" element={<SingleMoviePage />}>
           <Route path="Cast" element={<Cast />} />
           <Route path="Reviews" element={<Review />} />
