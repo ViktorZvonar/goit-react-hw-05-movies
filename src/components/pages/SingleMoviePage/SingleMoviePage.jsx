@@ -1,18 +1,16 @@
-import API from 'services/API';
-import { Link } from 'react-router-dom';
-
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 
-// import Cast from 'components/Cast/Cast';
-// import Review from 'components/Review/Review';
+import API from 'services/API';
+
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
-
-import { useParams } from 'react-router-dom';
 
 const SingleMoviePage = () => {
   const [movie, setMovie] = useState(0);
   const { id } = useParams();
+  const navigate = useNavigate();
+
   useEffect(() => {
     try {
       API.getSingleMovie(id).then(response => {
@@ -44,13 +42,11 @@ const SingleMoviePage = () => {
   if (!movie) {
     return;
   }
+  const goBack = () => navigate(-1);
 
   return (
     <div>
-      <Link to="/">
-        <button type="button">Go back</button>
-      </Link>
-
+      <button onClick={goBack}>Go back</button>
       <div>
         <img
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
@@ -67,8 +63,6 @@ const SingleMoviePage = () => {
       </div>
       <p>Additional information</p>
       <MovieDetails />
-      {/* <Cast />
-      <Review /> */}
     </div>
   );
 };

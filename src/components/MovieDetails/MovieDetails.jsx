@@ -1,8 +1,7 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
 // import Cast from 'components/Cast/Cast';
 export default function MovieDetails() {
   const { id } = useParams();
-  //   const options = ['Cast', 'Reviews'];
 
   return (
     <div>
@@ -14,6 +13,7 @@ export default function MovieDetails() {
           <Link to={`/movies/${id}/reviews`}>Reviews</Link>
         </li>
       </ul>
+      <Outlet />
     </div>
   );
 }
