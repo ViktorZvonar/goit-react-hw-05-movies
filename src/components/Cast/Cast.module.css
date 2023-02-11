@@ -1,0 +1,17 @@
+.image {
+  width: 150px;
+}
+
+.text {
+  font-size: 12px;
+}
+
+.list {
+  list-style: none;
+}
+
+.wrapper {
+  width: 150px;
+  border-bottom: 1px solid grey;
+  margin-bottom: 10px;
+}

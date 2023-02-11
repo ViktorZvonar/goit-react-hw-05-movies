@@ -1,10 +1,12 @@
-import MovieDetails from 'components/MovieDetails/MovieDetails';
-
-import API from 'services/API';
-
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
+
+import API from 'services/API';
+
+import css from './SingleMoviePage.module.css';
+
+import MovieDetails from 'components/MovieDetails/MovieDetails';
 
 const SingleMoviePage = () => {
   const [movie, setMovie] = useState(0);
@@ -45,14 +47,17 @@ const SingleMoviePage = () => {
   const goBack = () => navigate(-1);
 
   return (
-    <div>
-      <button onClick={goBack}>Go back</button>
-      <div>
+    <div className={css.wrapper}>
+      <button className={css.button} onClick={goBack}>
+        &#8592; Go back
+      </button>
+      <div className={css.container}>
         <img
+          className={css.image}
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
           alt={title}
         />
-        <div>
+        <div className={css.info}>
           <h2>{`${title} (${release_date})`}</h2>
           <p>{`User score: ${(vote_average * 10).toFixed()}%`}</p>
           <h3>Overview</h3>

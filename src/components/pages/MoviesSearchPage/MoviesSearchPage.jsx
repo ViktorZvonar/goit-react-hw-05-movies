@@ -4,6 +4,8 @@ import MovieList from 'components/MovieList/MovieList';
 import MovieSearchForm from 'components/MovieSearchForm/MovieSearchForm';
 import API from 'services/API';
 
+import css from './MoviesSearchPage.module.css';
+
 const MoviesPage = () => {
   const [state, setState] = useState([]);
 
@@ -32,7 +34,7 @@ const MoviesPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className={css.container}>
       <MovieSearchForm onSubmit={changeSearch} />
       {state.length > 0 && <MovieList items={state} />}
     </div>

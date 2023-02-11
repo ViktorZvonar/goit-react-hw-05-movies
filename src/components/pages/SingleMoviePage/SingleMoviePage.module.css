@@ -1,0 +1,28 @@
+.wrapper {
+  padding: 10px;
+}
+
+.button {
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: black;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.image {
+  width: 220px;
+}
+
+.container {
+  display: flex;
+  padding: 5px;
+  border-bottom: 1px solid grey;
+}
+.info {
+  padding: 0 15px;
+}
