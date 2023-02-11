@@ -59,7 +59,7 @@ const SingleMoviePage = () => {
         />
         <div className={css.info}>
           <h2>{`${title} (${release_date})`}</h2>
-          <p>{`User score: ${(vote_average * 10).toFixed()}%`}</p>
+          <p>{`User score: ${vote_average.toFixed(1)} out of 10`}</p>
           <h3>Overview</h3>
           <p>{overview}</p>
           <h3>Genres</h3>
