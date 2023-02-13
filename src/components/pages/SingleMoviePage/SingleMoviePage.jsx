@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 
@@ -12,6 +12,10 @@ const SingleMoviePage = () => {
   const [movie, setMovie] = useState(0);
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const from = location.state?.from || '/movies';
 
   useEffect(() => {
     try {
@@ -44,7 +48,7 @@ const SingleMoviePage = () => {
   if (!movie) {
     return;
   }
-  const goBack = () => navigate(-1);
+  const goBack = () => navigate(from);
 
   return (
     <div className={css.wrapper}>
