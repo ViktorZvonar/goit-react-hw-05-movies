@@ -1,4 +1,5 @@
 import { useParams, Link, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 // import Cast from 'components/Cast/Cast';
 export default function MovieDetails() {
   const { id } = useParams();
@@ -13,7 +14,9 @@ export default function MovieDetails() {
           <Link to={`/movies/${id}/reviews`}>Reviews</Link>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<p>Wait! I'm loading...</p>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }
