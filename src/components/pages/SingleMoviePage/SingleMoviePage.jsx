@@ -15,8 +15,6 @@ const SingleMoviePage = () => {
 
   const location = useLocation();
 
-  const from = location.state?.from || '/movies';
-
   useEffect(() => {
     try {
       API.getSingleMovie(id).then(response => {
@@ -48,7 +46,7 @@ const SingleMoviePage = () => {
   if (!movie) {
     return;
   }
-  const goBack = () => navigate(from);
+  const goBack = () => navigate(location.state?.from);
 
   return (
     <div className={css.wrapper}>
